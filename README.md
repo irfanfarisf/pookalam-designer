@@ -1,75 +1,93 @@
-# React + TypeScript + Vite
+# 🌼 Pookalam Designer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Poovum Codeum — ISTE SB NSSCE, Dept. of Computer Science & Engineering**
 
-Currently, two official plugins are available:
+An interactive, web-based digital canvas for designing a Pookalam — the traditional flower carpet made for Onam. Choose flowers, arrange petals, draw freehand, and let radial symmetry turn a single motif into a full festive design, all rendered live on an HTML5 canvas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Live site:** [irfanfarisf.github.io/pookalam-designer](https://irfanfarisf.github.io/pookalam-designer/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Flower Tool** — place traditional flower motifs: Chethi (Marigold), Thamara (Lotus), Rose, and Pichakam (Jasmine).
+- **Petals (Cut Flowers) Tool** — scatter loose petal confetti across the canvas, like the chopped flower bits used to fill gaps in a real Pookalam.
+- **Shape Tool** — add custom decorative shapes to the design.
+- **Freehand Draw Tool** — sketch original strokes and patterns.
+- **Fill Tool** — flood-fill an enclosed region with a solid colour, a flower pattern, or a petal pattern.
+- **Eraser** — remove elements from the canvas.
+- **Radial Symmetry** — design once and mirror it automatically in Off / 2 / 4 / 6 / 8 / 12-way symmetry, the way real Pookalams are built ring by ring.
+- **Select & Edit** — move, scale, rotate, and recolor any placed object; layered objects are tracked individually.
+- **Design Templates** — start from ready-made traditional layouts and customize every element after applying.
+- **Save / Load** — designs are saved to the browser's local storage so you can pick up where you left off.
+- **High-Resolution PNG Export** — download your finished Pookalam as an image.
+- **Responsive UI** — usable across desktop, tablet, and mobile.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) — build tool & dev server
+- HTML5 Canvas API for all drawing and rendering
+- [Tailwind CSS v4](https://tailwindcss.com/) (via `@tailwindcss/vite`) for styling
+- [lucide-react](https://lucide.dev/) for icons
+- [gh-pages](https://www.npmjs.com/package/gh-pages) for deployment
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
 
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- npm (comes bundled with Node.js)
+
+### Installation & Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/irfanfarisf/pookalam-designer.git
+cd pookalam-designer
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173` (Vite's default port).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Available Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command           | Description                                       |
+|--------------------|----------------------------------------------------|
+| `npm run dev`      | Start the local development server with hot reload |
+| `npm run build`    | Type-check and build an optimized production bundle to `dist/` |
+| `npm run preview`  | Preview the production build locally               |
+| `npm run lint`     | Run ESLint over the project                         |
+| `npm run deploy`   | Build and publish `dist/` to GitHub Pages           |
+
+## 📦 Deployment
+
+This project is deployed as a static site via **GitHub Pages** using the `gh-pages` package (`npm run deploy`), publishing the `dist/` build output. Since it's a fully client-side app with no backend, it can just as easily be hosted on Vercel or Netlify.
+
+## 📁 Project Structure
 
 ```
+pookalam-designer/
+├── public/           # Static assets (favicon, icon sprite)
+├── src/
+│   ├── App.tsx        # Main application — canvas engine, tools, UI
+│   ├── main.tsx        # React entry point
+│   ├── index.css        # Global styles / Tailwind entry
+│   └── assets/          # Images used in the UI
+├── index.html          # HTML entry point
+├── vite.config.ts        # Vite + Tailwind + GitHub Pages base config
+└── package.json          # Scripts & dependencies
+```
+
+## 🙏 Acknowledgements
+
+Built for **Poovum Codeum**, a Pookalam Designer Website Competition organized by **ISTE SB NSSCE — Department of Computer Science and Engineering**, celebrating Onam through code.
+
+---
+
+*Design it. Code it. Bloom it.* 🌸
